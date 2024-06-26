@@ -1,0 +1,101 @@
+body{
+    background-color: #F3F5FC;
+    
+}
+
+.container{
+    display: flex;
+    /*flex-direction: column; Aplicar en media query mobile  */
+    flex-direction: row;
+    
+    
+}
+
+.seccion_uno{
+    order: 1;
+    flex-grow: 7;
+    
+    
+}
+.seccion_dos{
+    order: 2;
+    flex-grow: 3;
+}
+
+.seccion_logo{
+    background-color: rgb(203, 207, 198);
+}
+
+.seccion_desencriptada{
+    background-color: aquamarine;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    
+    
+}
+
+.seccion_botones{
+    background-color: blueviolet;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.seccion_encriptada{
+    background-color: chocolate;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.seccion_boton_copiar{
+    background-color: darkcyan;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/** elementos */
+
+.caja_desencriptada{ /*en media querys poner al 100%*/
+    resize: none;
+    height: 100%;
+    width: 90%;
+    
+}
+.caja_encriptada{
+    resize: none;
+    height: 100%;
+    width: 90%;
+}
+
+.button{
+    font-family: "Inter", sans-serif;
+    background-color: #0A3871;
+    color: #D8DFE8;
+    border-radius: 12px;
+    padding: 12px;
+/*querys
+/**/
+}
+@media screen and (max-width: 850px) {
+    .container{
+        display: flex;
+        /*flex-direction: column; Aplicar en media query mobile  */
+        flex-direction: column;
+        
+    }
+    
+    .caja_desencriptada{
+        width: 100%;
+    }
+    .caja_encriptada{
+        width: 100%;
+    }
+
+}

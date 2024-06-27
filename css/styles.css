@@ -1,101 +1,136 @@
-body{
-    background-color: #F3F5FC;
-    
-}
-
 .container{
     display: flex;
-    /*flex-direction: column; Aplicar en media query mobile  */
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     
     
 }
 
+body{
+    background-color: #E5E5E5;
+    font-family: "Inter", sans-serif;
+}
+.seccion_logo{
+    background-color: #E5E5E5;
+    padding: 5px;
+}
+.logo{
+    height: 20px;
+}
 .seccion_uno{
     order: 1;
-    flex-grow: 7;
-    
+    width: 60%;
+    background-color: #E5E5E5;
+    padding: 10px;
     
 }
 .seccion_dos{
     order: 2;
-    flex-grow: 3;
-}
-
-.seccion_logo{
-    background-color: rgb(203, 207, 198);
-}
-
-.seccion_desencriptada{
-    background-color: aquamarine;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    
+    width: 40%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(179, 179, 182);
+    display: block;
     
 }
-
-.seccion_botones{
-    background-color: blueviolet;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    
+.muñeco{
+    width: 80%;
 }
-
-.seccion_encriptada{
-    background-color: chocolate;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.mensaje_inicial{
+    text-align: center;
 }
-
-.seccion_boton_copiar{
-    background-color: darkcyan;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-/** elementos */
-
-.caja_desencriptada{ /*en media querys poner al 100%*/
-    resize: none;
-    height: 100%;
-    width: 90%;
-    
-}
-.caja_encriptada{
-    resize: none;
-    height: 100%;
-    width: 90%;
+.seccion_dos_real{
+    order: 2;
+    width: 40%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(179, 179, 182);
+    display: none;
 }
 
 .button{
     font-family: "Inter", sans-serif;
     background-color: #0A3871;
+    border-style: hidden;
     color: #D8DFE8;
     border-radius: 12px;
     padding: 12px;
-/*querys
-/**/
+    margin: 3px;
+    width: 100px
+
 }
-@media screen and (max-width: 850px) {
+.caja_desencriptada{ 
+    border-style: none;
+    background-color: #E5E5E5;
+    resize: none;
+    height: 200px;
+    width: 100%;
+    overflow: auto;
+    outline: none;
+    
+}
+.caja_desencriptada::placeholder{
+    color: #0A3871;
+    text-align: center;
+}
+.caja_encriptada{
+    border-style: none;
+    background-color: white;
+    resize: none;
+    height: 230px;
+    width: 100%;
+    overflow: auto;
+    outline: none;
+    
+    
+}
+.seccion_boton_copiar{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    
+}
+.seccion_botones{
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.botones_encriptar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.texto_botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.texto_advertencia{
+    font-size: 8px;
+}
+@media screen and (max-width: 600px) {
     .container{
         display: flex;
-        /*flex-direction: column; Aplicar en media query mobile  */
         flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    .seccion_uno{
+        width: 90%;
+    }
+    .seccion_dos_real{
+        width: 90%;
         
     }
     
-    .caja_desencriptada{
-        width: 100%;
-    }
-    .caja_encriptada{
-        width: 100%;
-    }
+    
 
 }

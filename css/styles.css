@@ -1,3 +1,4 @@
+
 .container{
     display: flex;
     flex-direction: row;
@@ -36,10 +37,14 @@ body{
     
 }
 .muñeco{
-    width: 80%;
+    height: 25em;
+    
 }
 .mensaje_inicial{
     text-align: center;
+}
+.seccion_desencriptada{
+    padding: 20px 10px 0px 10px; 
 }
 .seccion_dos_real{
     order: 2;
@@ -59,28 +64,30 @@ body{
     border-radius: 12px;
     padding: 12px;
     margin: 3px;
-    width: 100px
+    width: 100px;
+    cursor: pointer;
 
+}
+.button:hover {
+    background-color: #214572;
 }
 .caja_desencriptada{ 
     border-style: none;
     background-color: #E5E5E5;
     resize: none;
-    height: 200px;
+    height: 35em;
     width: 100%;
     overflow: auto;
     outline: none;
+    padding-top: 30px;
     
 }
-.caja_desencriptada::placeholder{
-    color: #0A3871;
-    text-align: center;
-}
+
 .caja_encriptada{
     border-style: none;
     background-color: white;
     resize: none;
-    height: 230px;
+    height: 35em;
     width: 100%;
     overflow: auto;
     outline: none;
@@ -106,6 +113,7 @@ body{
     flex-direction: row;
     justify-content: center;
 }
+
 .texto_botones{
     display: flex;
     flex-direction: column;
@@ -113,9 +121,23 @@ body{
     text-align: center;
 }
 .texto_advertencia{
-    font-size: 8px;
+    font-size: 1em;
 }
-@media screen and (max-width: 600px) {
+.caja_encriptada::placeholder{
+    color: #0A3871;
+    text-align: center;
+}
+.caja_desencriptada::placeholder{
+    color: #0A3871;
+    text-align: center;
+}
+@media screen and (max-width: 1100px){
+    .muñeco{
+        max-height: 25em;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 850px) {
     .container{
         display: flex;
         flex-direction: column;
@@ -126,11 +148,22 @@ body{
     .seccion_uno{
         width: 90%;
     }
+    .seccion_dos{
+        width: 90%;
+    }
     .seccion_dos_real{
         width: 90%;
         
     }
-    
-    
+    .caja_encriptada{
+        height: 20em;
+    }
+    .caja_desencriptada{
+        height: 20em;
+    }
+    .muñeco{
+        height: auto;
+        width: 100%;
+    }
 
 }

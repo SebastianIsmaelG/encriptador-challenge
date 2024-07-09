@@ -19,7 +19,7 @@ function remplazar(elemento){
     elemento.value = x;
 }
 
-function tomar_texto(){
+function encriptar(){
     var texto = document.getElementById("caja_desencriptada").value;
     
     //quitar caracteres especiales
@@ -40,7 +40,28 @@ function tomar_texto(){
 
     //join y junta el texto
     var texto_encriptado = texto_separado.join("");
-    console.log(texto_encriptado);
+     
+
+    //caja encriptada
+    var caja_encriptada = document.getElementById("caja_encriptada");
+    caja_encriptada.value = texto_encriptado;
+
+}
+
+function copiar_texto(){
     
-      
+    //copiamos al portapapeles
+    navigator.clipboard.writeText(caja_encriptada.value)
+        .then(() => {
+            window.alert('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('Error al copiar el texto: ', err);
+        });
+
+    
+}
+
+function desencriptar(){
+    //tomo el valor de la caja, ver como saber si esta encriptado, desencriptar, borrar el texto de la caja encriptada y colocar el nuevo texto
 }

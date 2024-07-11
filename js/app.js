@@ -15,7 +15,7 @@ textarea.addEventListener('blur', () => {
 
 function remplazar(elemento){
     let x = elemento.value;
-    x = x.split(/[^A-Za-z0-9\#\& ]+/g);
+    x = x.split(/[^A-Za-z0-9\#\& ñÑ]+/g);
     x = x.join("");
     elemento.value = x;
 }

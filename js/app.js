@@ -4,6 +4,7 @@ const textarea = document.getElementById('caja_desencriptada');
 const area_de_bienvenida = document.getElementById('seccion_dos_bienvenida');
 const area_real_oculta = document.getElementById('seccion_dos_real');
 
+//remplaza un div de la foto con el div de procesado
 textarea.addEventListener('focus',()=>{
     area_real_oculta.style.display = 'block';
     area_de_bienvenida.style.display = 'none';
@@ -41,9 +42,9 @@ function encriptar(){
     //join y junta el texto
     var texto_encriptado = texto_separado.join("");
      
-
     //caja encriptada
     var caja_encriptada = document.getElementById("caja_encriptada");
+    caja_encriptada.value = "";
     caja_encriptada.value = texto_encriptado;
 
 }
@@ -63,5 +64,24 @@ function copiar_texto(){
 }
 
 function desencriptar(){
-    //tomo el valor de la caja, ver como saber si esta encriptado, desencriptar, borrar el texto de la caja encriptada y colocar el nuevo texto
+
+    var caja_encriptada = document.getElementById("caja_encriptada");
+    caja_encriptada.value = "";
+
+    var texto = document.getElementById("caja_desencriptada").value;
+
+     //quitar caracteres especiales
+     minusculas = texto.toLowerCase();
+
+     minusculas = minusculas.replace(/enter/g, 'e')
+                             .replace(/imes/g, 'i')
+                             .replace(/ai/g, 'a')
+                             .replace(/ober/g, 'o')
+                             .replace(/ufat/g, 'u');
+      
+ 
+     //caja del resultado
+     var caja_encriptada = document.getElementById("caja_encriptada");
+     caja_encriptada.value = "";
+     caja_encriptada.value = minusculas;
 }

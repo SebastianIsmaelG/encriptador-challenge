@@ -29,8 +29,8 @@
                         <p class="texto_advertencia"><i class="fa-solid fa-circle-exclamation"></i> Solo letras minusculas y sin acentos</p>
                     </div>
                     <div class="botones_encriptar">
-                        <button class="button" id="boton_encriptar" onclick="tomar_texto()">Encriptar</button>
-                        <button class="button" id="boton_desencriptar">Desencriptar</button>
+                        <button class="button" id="boton_encriptar" onclick="encriptar()">Encriptar</button>
+                        <button class="button" id="boton_desencriptar" onclick="desencriptar()">Desencriptar</button>
                     </div>      
                 </div>
             </div>
@@ -43,10 +43,10 @@
             </div>
             <div class="seccion_dos_real" id="seccion_dos_real">
                 <div class="seccion_encriptada">
-                    <textarea name="caja_encriptada" id="caja_encriptada" class="caja_encriptada" placeholder="Procesando..."></textarea>
+                    <textarea name="caja_encriptada" id="caja_encriptada" class="caja_encriptada" placeholder="Procesando..." ></textarea>
                 </div>
                 <div class="seccion_boton_copiar">
-                    <button class="button">Copiar</button>
+                    <button class="button" onclick="copiar_texto()">Copiar</button>
                 </div>
             </div>
         </div>

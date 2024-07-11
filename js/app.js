@@ -4,6 +4,7 @@ const textarea = document.getElementById('caja_desencriptada');
 const area_de_bienvenida = document.getElementById('seccion_dos_bienvenida');
 const area_real_oculta = document.getElementById('seccion_dos_real');
 
+//remplaza un div de la foto con el div de procesado
 textarea.addEventListener('focus',()=>{
     area_real_oculta.style.display = 'block';
     area_de_bienvenida.style.display = 'none';
@@ -19,7 +20,7 @@ function remplazar(elemento){
     elemento.value = x;
 }
 
-function tomar_texto(){
+function encriptar(){
     var texto = document.getElementById("caja_desencriptada").value;
     
     //quitar caracteres especiales
@@ -40,7 +41,47 @@ function tomar_texto(){
 
     //join y junta el texto
     var texto_encriptado = texto_separado.join("");
-    console.log(texto_encriptado);
+     
+    //caja encriptada
+    var caja_encriptada = document.getElementById("caja_encriptada");
+    caja_encriptada.value = "";
+    caja_encriptada.value = texto_encriptado;
+
+}
+
+function copiar_texto(){
     
+    //copiamos al portapapeles
+    navigator.clipboard.writeText(caja_encriptada.value)
+        .then(() => {
+            window.alert('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('Error al copiar el texto: ', err);
+        });
+
+    
+}
+
+function desencriptar(){
+
+    var caja_encriptada = document.getElementById("caja_encriptada");
+    caja_encriptada.value = "";
+
+    var texto = document.getElementById("caja_desencriptada").value;
+
+     //quitar caracteres especiales
+     minusculas = texto.toLowerCase();
+
+     minusculas = minusculas.replace(/enter/g, 'e')
+                             .replace(/imes/g, 'i')
+                             .replace(/ai/g, 'a')
+                             .replace(/ober/g, 'o')
+                             .replace(/ufat/g, 'u');
       
+ 
+     //caja del resultado
+     var caja_encriptada = document.getElementById("caja_encriptada");
+     caja_encriptada.value = "";
+     caja_encriptada.value = minusculas;
 }

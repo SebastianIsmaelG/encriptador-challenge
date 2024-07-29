@@ -14,9 +14,12 @@ textarea.addEventListener('blur', () => {
 });
 
 function remplazar(elemento){
-    let x = elemento.value;
-    // x = x.split(/[^A-Za-z0-9\#\& ñÑ]+/g);
-    x = x.split(/[^a-z0-9\#\& ñÑ]+/g);
+    let x = elemento.value.toLowerCase();
+    // el texto sin tildes
+    x = x.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+    //x = x.split(/[^A-Za-z0-9\#\& ñÑ]+/g);
+    //x = x.split(/[^a-z0-9\#\& ñÑ]+/g);
+    x = x.split(/[^a-z0-9\& ñÑ]+/g);
     x = x.join("");
     elemento.value = x;
 }
